@@ -18,4 +18,13 @@ public class CourseDAO {
 	public Course create(Course course){
 		return entityManager.merge(course);
 	}
+	
+	public Course update(Course course){
+		return entityManager.merge(course);
+	}
+	
+	public Course get(Integer id){
+		return entityManager.find(Course.class, id);
+	}
+
 }
