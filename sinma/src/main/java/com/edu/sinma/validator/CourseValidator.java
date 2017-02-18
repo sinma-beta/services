@@ -1,7 +1,7 @@
 package com.edu.sinma.validator;
 
-import org.hsqldb.lib.StringUtil;
 import org.springframework.stereotype.Component;
+import org.springframework.util.StringUtils;
 
 import com.edu.sinma.model.Course;
 import com.edu.sinma.model.ServiceDataWrapper;
@@ -11,11 +11,11 @@ public class CourseValidator {
 	
 	public void validateCreate(ServiceDataWrapper<Course,Course> serviceDataWrapper){
 		Course course = serviceDataWrapper.getRequest();
-		if(StringUtil.isEmpty(course.getTitle())){
+		if(StringUtils.isEmpty(course.getTitle())){
 			serviceDataWrapper.addError("Title is empty");
 		}
 		
-		if(StringUtil.isEmpty(course.getDescription())){
+		if(StringUtils.isEmpty(course.getDescription())){
 			serviceDataWrapper.addError("Description is empty");
 		}
 	}
